@@ -1,7 +1,7 @@
 {
-  "name": "css-base",
+  "name": "kkw-css",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "css/index.scss",
   "author": "kkw1573",
   "license": "MIT",
   "homepage": "https://github.com/wk1127/css-base",
