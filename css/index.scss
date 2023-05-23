@@ -1,0 +1,279 @@
+/* flex 弹性布局
+------------------------------- */
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-center,
+.flex-center-x {
+  @extend .flex;
+  justify-content: center;
+}
+
+.flex-align-center,
+.flex-ac {
+  @extend .flex;
+  align-items: center;
+}
+
+.flex-between,
+.flex-bt {
+  @extend .flex;
+  justify-content: space-between;
+}
+
+.flex-around,
+.flex-ad {
+  @extend .flex;
+  justify-content: space-around;
+}
+
+.flex-end {
+  @extend .flex;
+  justify-content: flex-end;
+}
+
+.flex-y {
+  @extend .flex;
+  flex-direction: column;
+}
+
+.flex-center-y,
+.flex-y-center,
+.flex-y-ct {
+  @extend .flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.aling-end {
+  align-items: flex-end;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+/* 宽高 100%
+------------------------------- */
+.w100 {
+  width: 100% !important;
+}
+.vw100 {
+  width: 100vw !important;
+}
+.h100 {
+  height: 100% !important;
+}
+.vh100 {
+  height: 100vh !important;
+}
+.max100vh {
+  max-height: 100vh !important;
+}
+.min100vh {
+  min-height: 100vh !important;
+}
+.scroll-y {
+  overflow: hidden auto;
+}
+
+/* 字体大小全局样式
+------------------------------- */
+@for $i from 10 through 50 {
+  .font#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+/* 行高全局样式
+------------------------------- */
+@for $i from 10 through 50 {
+  .h#{$i} {
+    height: #{$i}px !important;
+  }
+}
+
+@for $i from 10 through 50 {
+  .lh#{$i} {
+    line-height: #{$i}px !important;
+  }
+}
+
+@for $i from -10 through 10 {
+  .va#{$i} {
+    vertical-align: #{$i}px !important;
+  }
+}
+
+/* 外边距、内边距全局样式
+------------------------------- */
+@for $i from 0 through 50 {
+  // 外边距
+  .m#{$i} {
+    margin: #{$i}px !important;
+  }
+  .mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+  // 内边距
+  .p#{$i} {
+    padding: #{$i}px !important;
+  }
+  .pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+
+  // 圆角
+  .br-#{$i} {
+    border-radius: #{$i}+ "px";
+  }
+}
+
+@each $i in top, left, right, bottom {
+  .border-#{$i} {
+    border-#{$i}: 1px solid rgba(125, 125, 125, 0.2);
+  }
+}
+
+/* cursor 鼠标形状
+------------------------------- */
+// 默认
+.cursor-default {
+  cursor: default !important;
+}
+// 帮助
+.cursor-help {
+  cursor: help !important;
+}
+// 手指
+.cursor-pointer {
+  cursor: pointer !important;
+}
+// 移动
+.cursor-move {
+  cursor: move !important;
+}
+
+/* text-overflow 超出隐藏
+------------------------------- */
+
+.ell {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@for $i from 2 through 5 {
+  .ell#{$i} {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: #{$i};
+  }
+}
+
+/* 自定义样式
+------------------------------- */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+//  默认滚动条
+.scrollBar,
+.scrollbar {
+  // 滚动条的宽度 纵向和横向
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #f8f8f8;
+  }
+  /*定义滚动条轨道 内阴影+圆角*/
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(144, 147, 153, 0.3);
+    background-clip: padding-box;
+    min-height: 28px;
+    border-radius: 10px;
+    transition: 0.3s background-color;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(144, 147, 153, 0.7);
+  }
+}

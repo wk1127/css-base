@@ -1,0 +1,16 @@
+{
+  "name": "css-base",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "kkw1573",
+  "license": "MIT",
+  "homepage": "https://github.com/wk1127/css-base",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wk1127/css-base"
+  },
+  "scripts": {
+    "pub": "npm version patch && git push && npm publish",
+    "release": "npm version patch && git push && npm publish"
+  }
+}
